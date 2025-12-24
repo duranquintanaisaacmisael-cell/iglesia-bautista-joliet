@@ -3,1194 +3,1059 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#7a0b17" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0f172a" />
 
   <title>Iglesia Bautista Bíblica de Joliet | Servicios en Español e Inglés</title>
-  <meta name="description" content="Iglesia Bautista Bíblica Hispana en Joliet, IL. Dirección: 410 E Clay St, Joliet, IL 60432. Escuela dominical y culto dominical. Culto de oración jueves. Estudio bíblico domingo. Bienvenidos." />
+  <meta name="description" content="Iglesia Bautista Bíblica de Joliet. Servicios en Español e Inglés. Dirección: 410 E Clay St, Joliet, IL 60432. Ven tal como estás. Plan tu visita, horarios, ministerios, testimonios y contacto." />
   <meta name="robots" content="index,follow" />
 
-  <!-- Open Graph / Social -->
+  <!-- Open Graph (opcional) -->
   <meta property="og:title" content="Iglesia Bautista Bíblica de Joliet" />
-  <meta property="og:description" content="410 E Clay St, Joliet, IL 60432 · Servicios en Español e Inglés · Bienvenidos" />
+  <meta property="og:description" content="Servicios en Español e Inglés · Joliet, IL · Plan tu visita · Horarios · Testimonios" />
   <meta property="og:type" content="website" />
-  <!-- Si luego subes una imagen como /assets/og.jpg, descomenta la siguiente línea -->
+  <!-- Si subes una imagen: reemplaza la siguiente línea -->
   <!-- <meta property="og:image" content="https://TU-USUARIO.github.io/TU-REPO/assets/og.jpg" /> -->
-
-  <!-- Basic SEO helpers -->
-  <link rel="canonical" href="" />
-  <link rel="preconnect" href="https://www.google.com" />
-  <link rel="preconnect" href="https://maps.google.com" />
 
   <style>
     :root{
-      --bg: #0b0b0f;
-      --card: rgba(255,255,255,.08);
-      --card2: rgba(255,255,255,.06);
+      --bg0:#070a12;
+      --bg1:#0b1223;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --stroke: rgba(255,255,255,.12);
       --text: rgba(255,255,255,.92);
       --muted: rgba(255,255,255,.72);
-      --muted2: rgba(255,255,255,.62);
-      --line: rgba(255,255,255,.14);
-      --brand: #7a0b17;         /* vino */
-      --brand2: #caa24a;        /* dorado */
-      --ok: #30d158;
-      --shadow: 0 12px 40px rgba(0,0,0,.45);
+      --muted2: rgba(255,255,255,.60);
+      --brand: #f97316; /* naranja */
+      --brand2:#22c55e; /* verde */
+      --shadow: 0 12px 35px rgba(0,0,0,.45);
       --radius: 18px;
       --radius2: 14px;
-      --max: 1120px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      --max: 1140px;
     }
-
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg: #fbfbfd;
-        --card: rgba(0,0,0,.06);
-        --card2: rgba(0,0,0,.04);
-        --text: rgba(0,0,0,.92);
-        --muted: rgba(0,0,0,.70);
-        --muted2: rgba(0,0,0,.60);
-        --line: rgba(0,0,0,.12);
-        --shadow: 0 14px 40px rgba(0,0,0,.12);
-      }
-    }
-
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+    html,body{height:100%}
     body{
       margin:0;
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(122,11,23,.22), transparent 55%),
-                  radial-gradient(900px 500px at 90% 20%, rgba(202,162,74,.14), transparent 60%),
-                  var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
-      font-family:var(--font);
-      line-height:1.55;
+      background:
+        radial-gradient(1200px 650px at 20% 0%, rgba(249,115,22,.25), transparent 55%),
+        radial-gradient(900px 600px at 85% 10%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(700px 500px at 60% 90%, rgba(59,130,246,.16), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
     }
-
-    a{color:inherit; text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%; display:block}
-
-    .skip{
-      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
-    }
-    .skip:focus{
-      left:16px; top:16px; width:auto; height:auto; padding:10px 12px;
-      background:var(--bg); border:1px solid var(--line); border-radius:12px; z-index:9999;
-    }
-
+    a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
-    .nav{
+
+    /* Top bar */
+    .top{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
-      background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.20));
-      border-bottom:1px solid var(--line);
+      background: rgba(7,10,18,.55);
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
-    @media (prefers-color-scheme: light){
-      .nav{background: linear-gradient(to bottom, rgba(255,255,255,.85), rgba(255,255,255,.65));}
-    }
-
-    .nav-inner{
+    .top .row{
       display:flex; align-items:center; justify-content:space-between;
-      gap:12px; padding:12px 0;
+      gap:14px; padding:12px 0;
     }
-
     .brand{
       display:flex; align-items:center; gap:10px; min-width: 240px;
     }
-    .mark{
-      width:38px; height:38px; border-radius:12px;
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      display:grid; place-items:center;
       background:
-        radial-gradient(circle at 35% 25%, rgba(202,162,74,.75), transparent 55%),
-        linear-gradient(135deg, rgba(122,11,23,1), rgba(122,11,23,.55));
+        radial-gradient(circle at 30% 30%, rgba(249,115,22,.95), rgba(249,115,22,.35) 48%, rgba(255,255,255,.08) 70%),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.10);
       box-shadow: var(--shadow);
-      position:relative;
       flex:0 0 auto;
     }
-    .mark:after{
-      content:"✝";
-      position:absolute; inset:0;
-      display:grid; place-items:center;
-      font-weight:700; font-size:18px;
-      color: rgba(255,255,255,.92);
-      text-shadow: 0 6px 18px rgba(0,0,0,.35);
+    .brand h1{
+      font-size:14px; line-height:1.1; margin:0;
+      letter-spacing:.2px;
     }
-    .brand .title{
-      display:flex; flex-direction:column; line-height:1.2;
-    }
-    .brand .title strong{font-size:14px; letter-spacing:.2px}
-    .brand .title span{font-size:12px; color:var(--muted)}
-
-    .menu{
-      display:flex; align-items:center; gap:14px; flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .menu a{
-      font-size:13px; color:var(--muted);
-      padding:8px 10px; border-radius:12px;
-    }
-    .menu a:hover{background:var(--card2); color:var(--text); text-decoration:none}
-
-    .actions{
-      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    .brand p{
+      margin:2px 0 0;
+      font-size:12px; color:var(--muted2);
     }
 
-    .pill{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      padding:8px 10px;
-      border-radius:999px;
+    nav{
+      display:flex; align-items:center; gap:14px;
+    }
+    nav a{
+      text-decoration:none;
       font-size:13px;
       color:var(--muted);
-      display:flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      transition:.15s ease;
+      white-space:nowrap;
+    }
+    nav a:hover{
+      color:var(--text);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.10);
+    }
+
+    .tools{
+      display:flex; align-items:center; gap:10px;
     }
     .lang{
-      display:flex; align-items:center; gap:6px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      padding:6px; border-radius:999px;
+      display:flex; gap:8px;
+      padding:6px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
     }
-    .lang button{
+    .chip{
       border:0;
-      background:transparent;
-      color:var(--muted);
-      font-size:13px;
       padding:8px 10px;
       border-radius:999px;
+      background: transparent;
+      color:var(--muted);
       cursor:pointer;
+      font-weight:650;
+      font-size:12px;
+      letter-spacing:.2px;
+      transition:.15s ease;
     }
-    .lang button[aria-pressed="true"]{
-      background: linear-gradient(135deg, rgba(122,11,23,.95), rgba(202,162,74,.45));
-      color:white;
-      box-shadow: 0 10px 22px rgba(0,0,0,.22);
-    }
-    .btn{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
-      color:var(--text);
-      padding:10px 12px;
-      border-radius:14px;
-      display:inline-flex; align-items:center; gap:8px;
-      font-weight:650; font-size:13px;
-      cursor:pointer;
-    }
-    .btn:hover{background:var(--card2); text-decoration:none}
-    .btn.primary{
-      border:0;
-      background: linear-gradient(135deg, rgba(122,11,23,1), rgba(202,162,74,.55));
-      color:white;
-      box-shadow: var(--shadow);
-    }
-    .btn.primary:hover{filter:brightness(1.05)}
-    .btn.small{padding:8px 10px; border-radius:12px; font-weight:600}
-    .btn:focus, .lang button:focus, a:focus{
-      outline: 3px solid rgba(202,162,74,.45);
-      outline-offset: 2px;
+    .chip[aria-pressed="true"]{
+      color: #0b1223;
+      background: rgba(255,255,255,.92);
     }
 
-    header.hero{
-      padding:44px 0 12px;
+    .ctaMini{
+      display:flex; gap:8px; align-items:center;
     }
-    .hero-grid{
+    .btn{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 12px;
+      border-radius:999px;
+      text-decoration:none;
+      font-size:12px;
+      font-weight:650;
+      transition:.15s ease;
+      display:inline-flex; align-items:center; gap:8px;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      background: rgba(255,255,255,.10);
+      transform: translateY(-1px);
+    }
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(249,115,22,.95), rgba(249,115,22,.65));
+      border-color: rgba(249,115,22,.35);
+      color: #0b1223;
+    }
+    .btn.primary:hover{ background: linear-gradient(180deg, rgba(249,115,22,1), rgba(249,115,22,.75)); }
+    .btn.good{
+      background: linear-gradient(180deg, rgba(34,197,94,.92), rgba(34,197,94,.62));
+      border-color: rgba(34,197,94,.35);
+      color:#07130b;
+    }
+    .btn.good:hover{ background: linear-gradient(180deg, rgba(34,197,94,1), rgba(34,197,94,.72)); }
+
+    /* Hero */
+    header.hero{
+      padding:56px 0 26px;
+    }
+    .heroGrid{
       display:grid;
       grid-template-columns: 1.25fr .75fr;
       gap:18px;
       align-items:stretch;
     }
-    @media (max-width: 900px){
-      .hero-grid{grid-template-columns:1fr}
-      .brand{min-width:auto}
-    }
-
-    .hero-card{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    .heroCard{
       border-radius: var(--radius);
-      overflow:hidden;
-      box-shadow: var(--shadow);
-      position:relative;
-    }
-    .hero-visual{
-      min-height: 320px;
+      border:1px solid rgba(255,255,255,.10);
       background:
-        radial-gradient(900px 420px at 0% 0%, rgba(202,162,74,.20), transparent 60%),
-        radial-gradient(900px 420px at 100% 10%, rgba(122,11,23,.30), transparent 62%),
-        linear-gradient(135deg, rgba(0,0,0,.35), rgba(0,0,0,.0)),
-        url("assets/hero.jpg");
-      background-size: cover;
-      background-position: center;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      padding:22px;
-    }
-
-    /* Si NO tienes imagen todavía, el fondo no cargará, pero se verá elegante igual */
-    .hero-visual .badge{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border:1px solid rgba(255,255,255,.22);
-      background: rgba(0,0,0,.35);
-      color: rgba(255,255,255,.95);
-      border-radius: 999px;
-      width:fit-content;
-      font-size:13px;
-      margin-bottom:12px;
-      backdrop-filter: blur(10px);
-    }
-    .hero-visual h1{
-      margin:0;
-      font-size: clamp(26px, 3.8vw, 42px);
-      line-height:1.1;
-      letter-spacing:.2px;
-      text-shadow: 0 18px 40px rgba(0,0,0,.55);
-    }
-    .hero-visual p{
-      margin:10px 0 0;
-      max-width: 62ch;
-      color: rgba(255,255,255,.88);
-      text-shadow: 0 18px 40px rgba(0,0,0,.40);
-    }
-    .hero-cta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top:14px;
-    }
-
-    .side-card{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: var(--radius);
-      overflow:hidden;
+        radial-gradient(1000px 500px at 10% 0%, rgba(249,115,22,.24), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(34,197,94,.14), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
       box-shadow: var(--shadow);
-      padding:18px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
+      overflow:hidden;
+      position:relative;
+      min-height: 300px;
+    }
+    .heroInner{
+      padding:28px 26px 20px;
     }
     .kicker{
+      display:inline-flex;
+      gap:8px; align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      color: var(--muted);
       font-size:12px;
-      letter-spacing:.2px;
-      color:var(--muted);
-      display:flex; align-items:center; gap:8px;
+      font-weight:650;
     }
-    .kicker .dot{width:8px; height:8px; border-radius:99px; background: var(--ok); box-shadow:0 0 0 6px rgba(48,209,88,.12)}
-    .side-card h2{margin:0; font-size:18px; line-height:1.2}
-    .side-card p{margin:0; color:var(--muted); font-size:13px}
-    .quick{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap:10px;
-      margin-top:6px;
+    .heroTitle{
+      margin:14px 0 10px;
+      font-size:44px;
+      line-height:1.05;
+      letter-spacing:-.6px;
     }
-    .quick .item{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius2);
-      padding:12px;
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
+    .heroSub{
+      margin:0;
+      font-size:15px;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+    .heroActions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .sideStack{
+      display:flex; flex-direction:column; gap:12px;
+    }
+    .infoCard{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+      padding:16px;
+    }
+    .infoRow{
+      display:flex; gap:12px; align-items:flex-start;
     }
     .icon{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(122,11,23,.90), rgba(202,162,74,.40));
+      width:38px; height:38px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
       display:grid; place-items:center;
-      color:white;
       flex:0 0 auto;
-      box-shadow: 0 10px 22px rgba(0,0,0,.22);
-      font-weight:900;
     }
-    .quick .item strong{display:block; font-size:13px}
-    .quick .item span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+    .infoCard h3{ margin:0 0 2px; font-size:14px; }
+    .infoCard p{ margin:0; color:var(--muted); font-size:13px; }
 
+    /* Sections */
     section{
-      padding: 18px 0;
+      padding:18px 0;
+      scroll-margin-top: 84px;
     }
-    .grid{
+    .sectionHead{
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:14px;
+      margin:10px 0 12px;
+    }
+    .sectionHead h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .sectionHead p{
+      margin:0;
+      color:var(--muted2);
+      font-size:13px;
+    }
+
+    .grid2{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap:16px;
+      gap:12px;
     }
-    @media (max-width: 900px){
-      .grid{grid-template-columns:1fr}
-    }
-    .card{
-      border:1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px;
-    }
-    .card h3{margin:0 0 8px; font-size:18px}
-    .card p{margin:0 0 10px; color:var(--muted)}
-    .card ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
-    .card li{margin:6px 0}
-    .mini{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:10px;
-      margin-top:10px;
-    }
-    @media (max-width: 560px){
-      .mini{grid-template-columns:1fr}
-    }
-    .mini .tag{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius: 14px;
-      padding: 12px;
-    }
-    .mini .tag strong{display:block; font-size:13px}
-    .mini .tag span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
-
-    .gallery{
-      display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap:10px;
-    }
-    .ph{
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      overflow:hidden;
-      background: rgba(255,255,255,.03);
-      box-shadow: var(--shadow);
-      min-height: 170px;
-      position:relative;
-    }
-    .ph img{
-      width:100%; height:100%; object-fit:cover;
-    }
-    .ph .label{
-      position:absolute; left:12px; bottom:12px;
-      font-size:12px;
-      color: rgba(255,255,255,.92);
-      background: rgba(0,0,0,.40);
-      border:1px solid rgba(255,255,255,.18);
-      padding:6px 10px;
-      border-radius:999px;
-      backdrop-filter: blur(10px);
-    }
-
-    .col-7{grid-column: span 7;}
-    .col-5{grid-column: span 5;}
-    .col-6{grid-column: span 6;}
-    @media (max-width: 900px){
-      .col-7,.col-5,.col-6{grid-column: span 12;}
-    }
-
-    .map-wrap{
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      overflow:hidden;
-      box-shadow: var(--shadow);
-      background: rgba(255,255,255,.03);
-    }
-    .map-wrap iframe{
-      width:100%;
-      height: 360px;
-      border:0;
-      display:block;
-    }
-
-    .testis{
+    .grid3{
       display:grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap:10px;
-      margin-top:10px;
+      gap:12px;
     }
-    @media (max-width: 900px){
-      .testis{grid-template-columns:1fr}
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .pad{ padding:16px; }
+    .muted{ color: var(--muted); }
+    .small{ font-size:12px; color: var(--muted2); }
+
+    .steps{
+      display:flex; flex-direction:column; gap:10px;
+      margin: 10px 0 0;
+      padding-left: 0;
+      list-style:none;
+    }
+    .steps li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    .badge{
+      width:26px; height:26px; border-radius:10px;
+      display:grid; place-items:center;
+      background: rgba(249,115,22,.20);
+      border:1px solid rgba(249,115,22,.25);
+      color: rgba(255,255,255,.92);
+      font-weight:800; font-size:12px;
+      flex:0 0 auto;
+    }
+    .steps b{ display:block; margin-bottom:2px; font-size:13px; }
+    .steps span{ color:var(--muted); font-size:13px; }
+
+    /* Testimonios */
+    .testi{
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .avatar{
+      width:42px; height:42px;
+      border-radius:14px;
+      display:grid; place-items:center;
+      font-weight:900;
+      background: rgba(255,255,255,.07);
+      border:1px solid rgba(255,255,255,.12);
+      flex:0 0 auto;
     }
     .quote{
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      border-radius: var(--radius2);
-      padding: 14px;
+      margin:0;
+      color: var(--muted);
+      font-size:13px;
+      line-height:1.55;
     }
-    .quote p{margin:0; color:var(--text); font-size:13px}
-    .quote span{display:block; margin-top:8px; color:var(--muted); font-size:12px}
+    .who{
+      margin:6px 0 0;
+      font-size:12px;
+      color: var(--muted2);
+    }
 
+    /* Contact */
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:12px;
+    }
+    .field{
+      display:flex; flex-direction:column; gap:6px;
+      margin:10px 0;
+    }
+    label{ font-size:12px; color:var(--muted2); }
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      outline: none;
+      font-size: 13px;
+    }
+    textarea{ min-height: 120px; resize: vertical; }
+
+    /* Footer */
     footer{
-      padding: 28px 0 40px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
+      padding:30px 0 40px;
+      color: var(--muted2);
+      font-size:12px;
     }
     footer .foot{
       display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      align-items:center;
+      border-top:1px solid rgba(255,255,255,.08);
+      padding-top:16px;
     }
-    .small{font-size:12px; color:var(--muted2)}
-    .sep{opacity:.6}
-    .muted{color:var(--muted)}
 
-    /* Simple reveal animation (lightweight) */
-    .reveal{opacity:0; transform: translateY(10px); transition: all .55s ease;}
-    .reveal.on{opacity:1; transform: translateY(0);}
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      nav{ display:none; }
+      .grid3{ grid-template-columns: 1fr; }
+      .grid2{ grid-template-columns: 1fr; }
+      .contactGrid{ grid-template-columns: 1fr; }
+      .heroTitle{ font-size:38px; }
+      .brand{ min-width:auto; }
+    }
+    @media (max-width: 420px){
+      .heroTitle{ font-size:34px; }
+      .btn{ padding:10px 11px; }
+    }
   </style>
 
-  <!-- Schema.org (Local SEO / Google) -->
+  <!-- Datos estructurados -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Church",
-    "name": "Iglesia Bautista Bíblica de Joliet",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "410 E Clay St",
-      "addressLocality": "Joliet",
-      "addressRegion": "IL",
-      "postalCode": "60432",
-      "addressCountry": "US"
+    "@context":"https://schema.org",
+    "@type":"Church",
+    "name":"Iglesia Bautista Bíblica de Joliet",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"410 E Clay St",
+      "addressLocality":"Joliet",
+      "addressRegion":"IL",
+      "postalCode":"60432",
+      "addressCountry":"US"
     },
-    "telephone": "+1-331-901-9029",
-    "url": "",
-    "sameAs": [
-      "https://www.facebook.com/share/14Rw3VZpy9h/?mibextid=wwXIfr"
-    ]
+    "telephone":"+1-331-901-9029",
+    "areaServed":"Joliet, IL",
+    "description":"Servicios en Español e Inglés. Ven tal como estás."
   }
   </script>
 </head>
 
 <body>
-<a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="top">
+    <div class="wrap">
+      <div class="row">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">
+            <!-- cruz simple -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M10.3 2h3.4v7.2H21v3.4h-7.3V22h-3.4v-9.4H3V9.2h7.3V2z" fill="rgba(255,255,255,.92)"/>
+            </svg>
+          </div>
+          <div>
+            <h1 data-i18n="site_name">Iglesia Bautista Bíblica de Joliet</h1>
+            <p data-i18n="site_tag">Servicios en Español e Inglés · Joliet, IL</p>
+          </div>
+        </div>
 
-<nav class="nav" aria-label="Navegación principal">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#inicio" aria-label="Ir al inicio">
-      <div class="mark" aria-hidden="true"></div>
-      <div class="title">
-        <strong data-i18n="brandName">Iglesia Bautista Bíblica de Joliet</strong>
-        <span data-i18n="brandTag">Servicios en Español e Inglés · Joliet, IL</span>
+        <nav aria-label="Navegación principal">
+          <a href="#visita" data-i18n="nav_visit">Plan tu visita</a>
+          <a href="#horarios" data-i18n="nav_hours">Horarios</a>
+          <a href="#ministerios" data-i18n="nav_ministries">Ministerios</a>
+          <a href="#testimonios" data-i18n="nav_testimonials">Testimonios</a>
+          <a href="#contacto" data-i18n="nav_contact">Contacto</a>
+        </nav>
+
+        <div class="tools">
+          <div class="lang" role="group" aria-label="Idioma">
+            <button class="chip" id="btnES" aria-pressed="true">ES</button>
+            <button class="chip" id="btnEN" aria-pressed="false">EN</button>
+          </div>
+
+          <div class="ctaMini">
+            <a class="btn" id="callTop" href="tel:+13319019029" data-i18n="call">Llamar</a>
+            <a class="btn primary" href="#visita" data-i18n="visit_us">Visítanos</a>
+          </div>
+        </div>
       </div>
-    </a>
-
-    <div class="menu" aria-label="Secciones">
-      <a href="#visita" data-i18n="navVisit">Plan tu visita</a>
-      <a href="#horarios" data-i18n="navTimes">Horarios</a>
-      <a href="#ministerios" data-i18n="navMinistries">Ministerios</a>
-      <a href="#testimonios" data-i18n="navTestimonies">Testimonios</a>
-      <a href="#contacto" data-i18n="navContact">Contacto</a>
-    </div>
-
-    <div class="actions">
-      <div class="lang" role="group" aria-label="Idioma">
-        <button id="btnES" type="button" aria-pressed="true">ES</button>
-        <button id="btnEN" type="button" aria-pressed="false">EN</button>
-      </div>
-      <a class="btn small" href="tel:+13319019029" aria-label="Llamar al teléfono de la iglesia">
-        ☎ <span data-i18n="call">Llamar</span>
-      </a>
-      <a class="btn primary small" href="#visita">
-        ✨ <span data-i18n="ctaNav">Visítanos</span>
-      </a>
     </div>
   </div>
-</nav>
 
-<main id="contenido">
-  <header id="inicio" class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-card reveal">
-        <div class="hero-visual" role="img" aria-label="Bienvenidos a la Iglesia Bautista Bíblica de Joliet">
-          <div class="badge">
-            <span aria-hidden="true">📍</span>
-            <span data-i18n="heroBadge">410 E Clay St, Joliet, IL 60432</span>
+  <header class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
+        <div class="heroCard">
+          <div class="heroInner">
+            <div class="kicker" data-i18n="kicker">
+              ✨ Ven tal como estás · Enfocados en Cristo
+            </div>
+
+            <h2 class="heroTitle" data-i18n="hero_title">Comenzar de nuevo con Cristo.</h2>
+
+            <p class="heroSub" data-i18n="hero_sub">
+              Somos una iglesia bautista cristiana en Joliet. Queremos que te sientas en casa, escuches la Palabra de Dios y encuentres comunidad.
+            </p>
+
+            <div class="heroActions">
+              <a class="btn primary" href="#horarios" data-i18n="see_hours">Ver horarios</a>
+              <a class="btn" id="mapsBtn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=410%20E%20Clay%20St%2C%20Joliet%2C%20IL%2060432" data-i18n="get_directions">Cómo llegar</a>
+              <a class="btn good" id="liveBtn" target="_blank" rel="noopener" href="#" data-i18n="watch_live">Ver en vivo (Facebook)</a>
+            </div>
+
+            <p class="small" style="margin-top:12px" data-i18n="hero_small">
+              Dirección visible + horarios claros + botón “Ver en vivo” = más visitas.
+            </p>
+          </div>
+        </div>
+
+        <div class="sideStack">
+          <div class="infoCard">
+            <div class="infoRow">
+              <div class="icon" aria-hidden="true">📍</div>
+              <div>
+                <h3 data-i18n="address_title">Dirección</h3>
+                <p><span>410 E Clay St, Joliet, IL 60432</span></p>
+              </div>
+            </div>
           </div>
 
-          <h1 data-i18n="heroTitle">Bienvenido. Aquí puedes comenzar de nuevo con Cristo.</h1>
-          <p data-i18n="heroSub">
-            Somos una iglesia bautista cristiana (hispana) en Joliet. Ven tal como estás: queremos que te sientas en casa,
-            escuches la Palabra de Dios y encuentres comunidad.
-          </p>
-
-          <div class="hero-cta">
-            <a class="btn primary" href="#horarios">
-              🕊️ <span data-i18n="heroBtn1">Ver horarios</span>
-            </a>
-            <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps?q=410+E+Clay+St,+Joliet,+IL+60432">
-              🧭 <span data-i18n="heroBtn2">Cómo llegar</span>
-            </a>
-            <a class="btn" target="_blank" rel="noopener" href="https://www.facebook.com/share/14Rw3VZpy9h/?mibextid=wwXIfr">
-              📺 <span data-i18n="heroBtn3">Ver en vivo (Facebook)</span>
-            </a>
+          <div class="infoCard">
+            <div class="infoRow">
+              <div class="icon" aria-hidden="true">⏰</div>
+              <div>
+                <h3 data-i18n="hours_title">Horarios</h3>
+                <p data-i18n="hours_short">Domingo: 11:00am · Jueves: 7:00pm</p>
+              </div>
+            </div>
           </div>
+
+          <div class="infoCard">
+            <div class="infoRow">
+              <div class="icon" aria-hidden="true">👨‍👩‍👧‍👦</div>
+              <div>
+                <h3 data-i18n="kids_title">Niños</h3>
+                <p data-i18n="kids_desc">Contamos con cuidado y enseñanza para niños.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="infoCard">
+            <div class="infoRow">
+              <div class="icon" aria-hidden="true">📞</div>
+              <div>
+                <h3 data-i18n="pastor_title">Pastor</h3>
+                <p><span data-i18n="pastor_name">Pr. Ubaldo Rangel</span> · <a href="tel:+13319019029">+1 (331) 901-9029</a></p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-
-      <aside class="side-card reveal" aria-label="Información rápida">
-        <div class="kicker"><span class="dot" aria-hidden="true"></span><span data-i18n="quickKicker">Información rápida</span></div>
-        <h2 data-i18n="quickTitle">Todo lo esencial, en 20 segundos.</h2>
-        <p data-i18n="quickSub">Dirección, horarios principales, cuidado de niños y cómo vernos si estás lejos.</p>
-
-        <div class="quick">
-          <div class="item">
-            <div class="icon" aria-hidden="true">📍</div>
-            <div>
-              <strong data-i18n="q1t">Dirección</strong>
-              <span>410 E Clay St, Joliet, IL 60432</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="icon" aria-hidden="true">⏰</div>
-            <div>
-              <strong data-i18n="q2t">Domingo</strong>
-              <span data-i18n="q2s">11:00 AM Escuela Dominical · 12:15 PM Culto · 5:00 PM Estudio Bíblico</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="icon" aria-hidden="true">🙏</div>
-            <div>
-              <strong data-i18n="q3t">Jueves</strong>
-              <span data-i18n="q3s">7:00 PM Culto de oración</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="icon" aria-hidden="true">👶</div>
-            <div>
-              <strong data-i18n="q4t">Niños</strong>
-              <span data-i18n="q4s">Cuidado y enseñanza bíblica (menores de 12)</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="icon" aria-hidden="true">📖</div>
-            <div>
-              <strong data-i18n="q5t">Pastor</strong>
-              <span data-i18n="q5s">Pr. Ubaldo Rangel (habla inglés también)</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
-          <a class="btn primary" href="#visita">🧡 <span data-i18n="planVisit">Plan tu visita</span></a>
-          <a class="btn" href="#contacto">💬 <span data-i18n="msgUs">Escríbenos</span></a>
-        </div>
-
-        <div class="small" data-i18n="quickNote">
-          Si es tu primera vez, no te preocupes: te guiamos paso a paso.
-        </div>
-      </aside>
     </div>
   </header>
 
-  <section id="visita">
-    <div class="wrap grid">
-      <div class="card reveal">
-        <h3 data-i18n="visitTitle">Plan tu visita (sin pena)</h3>
-        <p data-i18n="visitP1">
-          Queremos que tu primera visita sea fácil. Llega con calma: habrá alguien para recibirte.
-        </p>
-        <div class="mini">
-          <div class="tag">
-            <strong data-i18n="visitWhatT">¿Qué esperar?</strong>
-            <span data-i18n="visitWhatS">Predicación bíblica, oración, himnos y un ambiente respetuoso y familiar.</span>
-          </div>
-          <div class="tag">
-            <strong data-i18n="visitWearT">¿Qué me pongo?</strong>
-            <span data-i18n="visitWearS">Como te sientas cómodo. Algunos van formales, otros casual: lo importante es venir.</span>
-          </div>
-          <div class="tag">
-            <strong data-i18n="visitKidsT">¿Y mis niños?</strong>
-            <span data-i18n="visitKidsS">Tenemos cuidado y enseñanza para menores de 12 años durante el domingo.</span>
-          </div>
-          <div class="tag">
-            <strong data-i18n="visitLangT">Español / English</strong>
-            <span data-i18n="visitLangS">Podemos apoyar a visitantes de inglés. El pastor también habla inglés.</span>
-          </div>
+  <main class="wrap">
+    <!-- Plan tu visita -->
+    <section id="visita">
+      <div class="sectionHead">
+        <div>
+          <h2 data-i18n="visit_title">Plan tu visita</h2>
+          <p data-i18n="visit_sub">Si es tu primera vez, aquí va lo esencial (simple y claro).</p>
         </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn primary" target="_blank" rel="noopener"
-             href="https://www.google.com/maps?q=410+E+Clay+St,+Joliet,+IL+60432">
-            🧭 <span data-i18n="visitDir">Abrir en Maps</span>
-          </a>
-          <a class="btn" href="tel:+13319019029">☎ <span data-i18n="visitCall">Llamar y preguntar</span></a>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" id="msgFbBtn" target="_blank" rel="noopener" href="#" data-i18n="msg_fb">Mensaje por Facebook</a>
+          <a class="btn primary" href="#contacto" data-i18n="first_time">Primera vez</a>
         </div>
       </div>
 
-      <div class="card reveal">
-        <h3 data-i18n="whyTitle">¿Por qué venir?</h3>
-        <p data-i18n="whyP">
-          Mucha gente está cansada, con culpa o sin dirección. Aquí no vendemos “religión bonita”: presentamos a Cristo y Su Palabra.
-          Si quieres escuchar un mensaje claro y tener comunidad, este lugar es para ti.
-        </p>
-        <ul>
-          <li data-i18n="whyL1">Enseñanza bíblica con propósito (no show).</li>
-          <li data-i18n="whyL2">Una iglesia donde se ora, se aprende y se crece.</li>
-          <li data-i18n="whyL3">Familias, jóvenes, niños… todos son bienvenidos.</li>
-          <li data-i18n="whyL4">Si estás lejos, puedes ver los en vivos por Facebook.</li>
-        </ul>
-        <div class="pill" style="margin-top:10px;">
-          ✅ <span data-i18n="whyNote">Nuestra meta: que conozcas a Cristo y avances en tu fe.</span>
+      <div class="grid2">
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 8px" data-i18n="what_to_expect">¿Qué esperar?</h3>
+            <ul class="steps">
+              <li>
+                <div class="badge">1</div>
+                <div>
+                  <b data-i18n="step1_t">Llegas y te recibimos</b>
+                  <span data-i18n="step1_d">Alguien te saluda, te ayuda a ubicarte y responde tus preguntas.</span>
+                </div>
+              </li>
+              <li>
+                <div class="badge">2</div>
+                <div>
+                  <b data-i18n="step2_t">Alabanza y predicación bíblica</b>
+                  <span data-i18n="step2_d">Enfocados en Cristo y en la Palabra de Dios (Biblia).</span>
+                </div>
+              </li>
+              <li>
+                <div class="badge">3</div>
+                <div>
+                  <b data-i18n="step3_t">Convivencia</b>
+                  <span data-i18n="step3_d">Queremos que conectes con gente real y una comunidad sana.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="horarios">
-    <div class="wrap grid">
-      <div class="card reveal">
-        <h3 data-i18n="timesTitle">Horarios</h3>
-        <p data-i18n="timesP">Nuestros servicios regulares (si no hay eventos especiales).</p>
-        <div class="mini">
-          <div class="tag">
-            <strong data-i18n="sunT">Domingo</strong>
-            <span data-i18n="sunS">11:00 AM Escuela Dominical</span>
-            <span class="small" data-i18n="sunS2">12:15 PM Culto (mensaje)</span><br/>
-            <span class="small" data-i18n="sunS3">5:00 PM Estudio bíblico (1 hora)</span>
-          </div>
-          <div class="tag">
-            <strong data-i18n="thuT">Jueves</strong>
-            <span data-i18n="thuS">7:00 PM Culto de oración</span>
-            <div class="small" data-i18n="thuS2">Oramos como iglesia por necesidades y damos un mensaje breve.</div>
-          </div>
-          <div class="tag">
-            <strong data-i18n="satT">Sábado</strong>
-            <span data-i18n="satS">10:30 AM Devocional</span>
-            <div class="small" data-i18n="satS2">11:00 AM Ganancia de almas (visitas / evangelismo)</div>
-          </div>
-          <div class="tag">
-            <strong data-i18n="liveT">Transmisiones</strong>
-            <span data-i18n="liveS">En vivos por Facebook (cuando se transmite)</span>
-            <div style="margin-top:10px;">
-              <a class="btn small" target="_blank" rel="noopener" href="https://www.facebook.com/share/14Rw3VZpy9h/?mibextid=wwXIfr">
-                📺 <span data-i18n="liveBtn">Abrir Facebook</span>
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 8px" data-i18n="help_title">¿Necesitas ayuda para venir?</h3>
+            <p class="muted" data-i18n="help_sub">
+              Haz clic y listo: ruta en Google Maps, llamada rápida o mensaje.
+            </p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px">
+              <a class="btn primary" target="_blank" rel="noopener"
+                 href="https://www.google.com/maps/dir/?api=1&destination=410%20E%20Clay%20St%2C%20Joliet%2C%20IL%2060432"
+                 data-i18n="directions">
+                📍 Cómo llegar
               </a>
+              <a class="btn" href="tel:+13319019029" data-i18n="call_now">📞 Llamar ahora</a>
+              <a class="btn good" href="#testimonios" data-i18n="see_testimonials">⭐ Ver testimonios</a>
+            </div>
+
+            <div class="card" style="margin-top:12px; background: rgba(255,255,255,.04);">
+              <div class="pad">
+                <h4 style="margin:0 0 6px; font-size:13px" data-i18n="today_title">Hoy</h4>
+                <p class="muted" style="margin:0; font-size:13px" data-i18n="today_text">
+                  Si hoy tienes la oportunidad, ven y siéntete en casa.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horarios -->
+    <section id="horarios">
+      <div class="sectionHead">
+        <div>
+          <h2 data-i18n="hours_section_title">Horarios</h2>
+          <p data-i18n="hours_section_sub">Lo más importante: cuándo y a qué hora.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 6px" data-i18n="sun_title">Domingo</h3>
+            <p class="muted" style="margin:0" data-i18n="sun_times">11:00am · Escuela dominical</p>
+            <p class="muted" style="margin:6px 0 0" data-i18n="sun_times2">12:30pm · Culto</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 6px" data-i18n="thu_title">Jueves</h3>
+            <p class="muted" style="margin:0" data-i18n="thu_times">7:00pm · Servicio</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 6px" data-i18n="lang_title">Idiomas</h3>
+            <p class="muted" style="margin:0" data-i18n="lang_text">
+              Español e Inglés. El pastor habla inglés y podemos ayudar con traducción.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ministerios -->
+    <section id="ministerios">
+      <div class="sectionHead">
+        <div>
+          <h2 data-i18n="min_title">Ministerios</h2>
+          <p data-i18n="min_sub">Un lugar para crecer, servir y encontrar comunidad.</p>
+        </div>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 6px" data-i18n="min1_title">Familias</h3>
+            <p class="muted" style="margin:0" data-i18n="min1_desc">Enseñanza bíblica y apoyo para la familia.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 6px" data-i18n="min2_title">Niños</h3>
+            <p class="muted" style="margin:0" data-i18n="min2_desc">Cuidado y enseñanza para niños durante los servicios.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 6px" data-i18n="min3_title">Alabanza</h3>
+            <p class="muted" style="margin:0" data-i18n="min3_desc">Himnos y música para exaltar a Cristo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios">
+      <div class="sectionHead">
+        <div>
+          <h2 data-i18n="test_title">Testimonios</h2>
+          <p data-i18n="test_sub">Historias reales. (Agrega los tuyos cuando quieras.)</p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="#contacto" data-i18n="share_testimony">Quiero compartir mi testimonio</a>
+        </div>
+      </div>
+
+      <div class="grid3" id="testiGrid">
+        <!-- JS llenará aquí -->
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+      <div class="sectionHead">
+        <div>
+          <h2 data-i18n="contact_title">Contacto</h2>
+          <p data-i18n="contact_sub">¿Tienes preguntas? Escríbenos y te orientamos.</p>
+        </div>
+      </div>
+
+      <div class="contactGrid">
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 8px" data-i18n="contact_form_title">Envíanos un mensaje</h3>
+
+            <form id="contactForm">
+              <div class="field">
+                <label for="name" data-i18n="form_name">Nombre</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Tu nombre" />
+              </div>
+
+              <div class="field">
+                <label for="phone" data-i18n="form_phone">Teléfono (opcional)</label>
+                <input id="phone" name="phone" autocomplete="tel" placeholder="+1 (___) ___-____" />
+              </div>
+
+              <div class="field">
+                <label for="msg" data-i18n="form_msg">Mensaje</label>
+                <textarea id="msg" name="msg" placeholder="Hola, me gustaría visitar la iglesia..."></textarea>
+              </div>
+
+              <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
+                <button class="btn primary" type="submit" data-i18n="send_email">Enviar por email</button>
+                <a class="btn" href="tel:+13319019029" data-i18n="call_now2">Llamar</a>
+                <a class="btn good" id="mapsBtn2" target="_blank" rel="noopener"
+                   href="https://www.google.com/maps/dir/?api=1&destination=410%20E%20Clay%20St%2C%20Joliet%2C%20IL%2060432"
+                   data-i18n="directions2">Cómo llegar</a>
+              </div>
+
+              <p class="small" style="margin:10px 0 0" data-i18n="email_note">
+                Este formulario abre tu app de correo (no guarda datos en servidor).
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="pad">
+            <h3 style="margin:0 0 8px" data-i18n="contact_info_title">Información</h3>
+
+            <div class="infoRow" style="margin-top:10px">
+              <div class="icon" aria-hidden="true">📍</div>
+              <div>
+                <h3 style="margin:0; font-size:13px" data-i18n="addr">Dirección</h3>
+                <p style="margin:2px 0 0" class="muted">410 E Clay St, Joliet, IL 60432</p>
+              </div>
+            </div>
+
+            <div class="infoRow" style="margin-top:12px">
+              <div class="icon" aria-hidden="true">📞</div>
+              <div>
+                <h3 style="margin:0; font-size:13px" data-i18n="phone">Teléfono</h3>
+                <p style="margin:2px 0 0" class="muted"><a href="tel:+13319019029">+1 (331) 901-9029</a></p>
+              </div>
+            </div>
+
+            <div class="infoRow" style="margin-top:12px">
+              <div class="icon" aria-hidden="true">⏰</div>
+              <div>
+                <h3 style="margin:0; font-size:13px" data-i18n="service_hours">Servicios</h3>
+                <p style="margin:2px 0 0" class="muted" data-i18n="service_hours_text">
+                  Domingo 11:00am & 12:30pm · Jueves 7:00pm
+                </p>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top:12px; background: rgba(255,255,255,.04)">
+              <div class="pad">
+                <h4 style="margin:0 0 6px; font-size:13px" data-i18n="live_title">En vivo</h4>
+                <p class="muted" style="margin:0" data-i18n="live_text">
+                  Si no puedes venir hoy, míranos en Facebook.
+                </p>
+                <div style="margin-top:10px">
+                  <a class="btn good" id="liveBtn2" target="_blank" rel="noopener" href="#" data-i18n="watch_live2">Ver en vivo</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div>
+          <div><b>Iglesia Bautista Bíblica de Joliet</b></div>
+          <div>410 E Clay St, Joliet, IL 60432 · <a href="tel:+13319019029">+1 (331) 901-9029</a></div>
+        </div>
+        <div>© <span id="year"></span> · <span data-i18n="footer_note">Hecho con amor y claridad.</span></div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // ====== CONFIG: reemplaza enlaces si quieres ======
+    const LINKS = {
+      facebookPage: "#",          // <-- pega aquí el link de Facebook (página)
+      facebookLive: "#",          // <-- pega aquí el link directo a "En vivo"
+      emailTo: "mailto:iglesia@example.com" // <-- cambia a tu correo real
+    };
+
+    // Botones a Facebook
+    document.getElementById("msgFbBtn").href = LINKS.facebookPage;
+    document.getElementById("liveBtn").href = LINKS.facebookLive;
+    document.getElementById("liveBtn2").href = LINKS.facebookLive;
+
+    // Año
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Testimonios (ejemplos; cambia textos/nombres cuando tengas permisos)
+    const testimonials = [
+      { name: "María", text_es: "Aquí encontré paz y una familia en Cristo.", text_en: "Here I found peace and a family in Christ." },
+      { name: "Carlos", text_es: "La Palabra se predica clara y con amor.", text_en: "The Word is preached clearly and with love." },
+      { name: "Ana", text_es: "Me ayudaron desde el primer día. Me sentí en casa.", text_en: "They helped me from day one. I felt at home." }
+    ];
+
+    function renderTestimonials(lang){
+      const grid = document.getElementById("testiGrid");
+      grid.innerHTML = "";
+      testimonials.forEach(t => {
+        const card = document.createElement("div");
+        card.className = "card";
+        const initial = (t.name || "?").trim().charAt(0).toUpperCase();
+        const text = lang === "en" ? t.text_en : t.text_es;
+
+        card.innerHTML = `
+          <div class="pad">
+            <div class="testi">
+              <div class="avatar" aria-hidden="true">${initial}</div>
+              <div>
+                <p class="quote">“${escapeHtml(text)}”</p>
+                <p class="who">— ${escapeHtml(t.name)}</p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <h3 data-i18n="mapTitle">Ubicación</h3>
-        <p data-i18n="mapP">Estamos en Joliet, Illinois. Puedes abrir Maps con un toque.</p>
-
-        <div class="map-wrap" aria-label="Mapa">
-          <iframe
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=410%20E%20Clay%20St,%20Joliet,%20IL%2060432&output=embed"
-            title="Mapa: 410 E Clay St, Joliet, IL 60432">
-          </iframe>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn primary" target="_blank" rel="noopener"
-             href="https://www.google.com/maps/dir/?api=1&destination=410+E+Clay+St,+Joliet,+IL+60432">
-            🧭 <span data-i18n="dirBtn">Cómo llegar</span>
-          </a>
-          <a class="btn" target="_blank" rel="noopener"
-             href="https://www.google.com/maps?q=410+E+Clay+St,+Joliet,+IL+60432">
-            📍 <span data-i18n="openMaps">Abrir ubicación</span>
-          </a>
-        </div>
-
-        <div class="small" style="margin-top:10px;" data-i18n="mapNote">
-          Si quieres, te ayudamos por mensaje para que llegues sin batallar.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="ministerios">
-    <div class="wrap">
-      <div class="card reveal">
-        <h3 data-i18n="minTitle">Ministerios</h3>
-        <p data-i18n="minP">
-          No es solo “asistir”: es crecer, servir y caminar juntos. Aquí algunos puntos clave.
-        </p>
-
-        <div class="mini">
-          <div class="tag">
-            <strong data-i18n="minKidsT">Niños (menores de 12)</strong>
-            <span data-i18n="minKidsS">Cuidado + enseñanza cristiana, versículos, actividades y dibujos.</span>
-          </div>
-          <div class="tag">
-            <strong data-i18n="minEDT">Escuela Dominical</strong>
-            <span data-i18n="minEDS">Estudio bíblico para aprender, preguntar y fortalecer la fe.</span>
-          </div>
-          <div class="tag">
-            <strong data-i18n="minPrT">Oración</strong>
-            <span data-i18n="minPrS">Jueves: unimos la iglesia en oración por necesidades reales.</span>
-          </div>
-          <div class="tag">
-            <strong data-i18n="minSoulT">Ganancia de almas</strong>
-            <span data-i18n="minSoulS">Sábados: devocional y salimos a visitar y compartir el evangelio.</span>
-          </div>
-        </div>
-
-        <div class="pill" style="margin-top:12px;">
-          ✝ <span data-i18n="minNote">Si quieres integrarte o servir, escríbenos y te orientamos.</span>
-        </div>
-      </div>
-
-      <div class="gallery" style="margin-top:14px;">
-        <div class="ph col-7 reveal">
-          <!-- Pon tus fotos en /assets y cambia estos nombres -->
-          <img src="assets/sanctuary.jpg" alt="Interior de la iglesia" loading="lazy" />
-          <div class="label" data-i18n="gal1">Nuestro templo</div>
-        </div>
-        <div class="ph col-5 reveal">
-          <img src="assets/group.jpg" alt="Congregación" loading="lazy" />
-          <div class="label" data-i18n="gal2">Familia en Cristo</div>
-        </div>
-        <div class="ph col-6 reveal">
-          <img src="assets/flyer.jpg" alt="Anuncio de horarios" loading="lazy" />
-          <div class="label" data-i18n="gal3">Horarios</div>
-        </div>
-        <div class="ph col-6 reveal">
-          <img src="assets/worship.jpg" alt="Música / himnos" loading="lazy" />
-          <div class="label" data-i18n="gal4">Alabanza e himnos</div>
-        </div>
-      </div>
-
-      <div class="small wrap" style="padding:0; margin-top:10px;" data-i18n="galNote">
-        Nota: si aún no subes fotos a /assets, estas cajas se verán vacías. En el siguiente paso te digo cómo subirlas rápido.
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonios">
-    <div class="wrap grid">
-      <div class="card reveal">
-        <h3 data-i18n="testTitle">Testimonios</h3>
-        <p data-i18n="testP">
-          Los testimonios son poderosos porque muestran lo que Dios hace en vidas reales.
-          (Aquí dejé ejemplos. Luego los cambiamos por testimonios reales.)
-        </p>
-
-        <div class="testis">
-          <div class="quote">
-            <p data-i18n="t1">“Llegué cargado y sin paz. Dios me habló con Su Palabra y empecé a caminar diferente.”</p>
-            <span data-i18n="t1a">— Visitante</span>
-          </div>
-          <div class="quote">
-            <p data-i18n="t2">“Mis hijos están aprendiendo versículos y verdad bíblica. Eso no tiene precio.”</p>
-            <span data-i18n="t2a">— Familia</span>
-          </div>
-          <div class="quote">
-            <p data-i18n="t3">“No es un lugar de apariencias. Es una iglesia donde se predica claro y se ora de verdad.”</p>
-            <span data-i18n="t3a">— Hermano/a</span>
-          </div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn primary" href="#contacto">📝 <span data-i18n="shareTest">Quiero compartir mi testimonio</span></a>
-          <a class="btn" target="_blank" rel="noopener"
-             href="https://www.facebook.com/share/14Rw3VZpy9h/?mibextid=wwXIfr">
-            💬 <span data-i18n="msgFB">Mensaje por Facebook</span>
-          </a>
-        </div>
-
-        <div class="small" style="margin-top:10px;" data-i18n="testNote">
-          Consejo: para que esto aumente visitas, pon 3–6 testimonios reales y una foto/primera letra del nombre (con permiso).
-        </div>
-      </div>
-
-      <div class="card reveal" id="contacto">
-        <h3 data-i18n="contactTitle">Contacto</h3>
-        <p data-i18n="contactP">¿Tienes preguntas? Aquí lo más rápido para comunicarte.</p>
-
-        <div class="mini">
-          <div class="tag">
-            <strong data-i18n="contactPhoneT">Teléfono</strong>
-            <span><a href="tel:+13319019029">+1 (331) 901-9029</a></span>
-            <div class="small" data-i18n="contactPhoneS">Puedes llamar o dejar mensaje.</div>
-          </div>
-
-          <div class="tag">
-            <strong data-i18n="contactAddrT">Dirección</strong>
-            <span>410 E Clay St, Joliet, IL 60432</span>
-            <div class="small"><a target="_blank" rel="noopener" href="https://www.google.com/maps?q=410+E+Clay+St,+Joliet,+IL+60432" data-i18n="contactAddrS">Abrir en Maps</a></div>
-          </div>
-
-          <div class="tag">
-            <strong data-i18n="contactFBT">Facebook</strong>
-            <span><a target="_blank" rel="noopener" href="https://www.facebook.com/share/14Rw3VZpy9h/?mibextid=wwXIfr" data-i18n="contactFBS">Ir al perfil</a></span>
-            <div class="small" data-i18n="contactFBNote">Ahí publicamos y transmitimos cuando hay en vivo.</div>
-          </div>
-
-          <div class="tag">
-            <strong data-i18n="pastorT">Pastor</strong>
-            <span data-i18n="pastorS">Pr. Ubaldo Rangel</span>
-            <div class="small" data-i18n="pastorNote">Si necesitas orientación, con gusto te atendemos.</div>
-          </div>
-        </div>
-
-        <div class="pill" style="margin-top:12px;">
-          ⭐ <span data-i18n="growthNote">Para crecer visitas: dirección visible, horarios claros, botón “Cómo llegar”, y “Ver en vivo”. Eso convierte.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="card reveal">
-        <h3 data-i18n="nextStepsT">Siguientes pasos (para que esto realmente traiga gente)</h3>
-        <p data-i18n="nextStepsP">
-          Esta página ya está diseñada para convertir visitas. Pero lo que más sube asistencia es el “ecosistema”:
-          Google + Facebook + constancia.
-        </p>
-        <ul>
-          <li data-i18n="ns1">Crear o reclamar “Google Business Profile” para que aparezcan en Google Maps con horarios y reseñas.</li>
-          <li data-i18n="ns2">Poner este link en la bio de Facebook, y fijarlo (pinned post) con “Cómo llegar” + horarios.</li>
-          <li data-i18n="ns3">Subir 6–10 fotos reales (templo, familia, niños, predicación, grupo).</li>
-          <li data-i18n="ns4">Agregar 3 testimonios reales (con permiso) y 1 invitación clara cada semana.</li>
-        </ul>
-        <div class="small" data-i18n="nsNote">
-          Cuando terminemos GitHub Pages, el siguiente “boost” fuerte es Google Business + reseñas reales.
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap foot">
-    <div>
-      <strong data-i18n="footName">Iglesia Bautista Bíblica de Joliet</strong>
-      <div class="small">
-        <span>410 E Clay St, Joliet, IL 60432</span> <span class="sep">·</span>
-        <a href="tel:+13319019029">+1 (331) 901-9029</a>
-      </div>
-      <div class="small">
-        <a target="_blank" rel="noopener" href="https://www.facebook.com/share/14Rw3VZpy9h/?mibextid=wwXIfr" data-i18n="footFB">Facebook</a>
-        <span class="sep">·</span>
-        <a href="#horarios" data-i18n="footTimes">Horarios</a>
-        <span class="sep">·</span>
-        <a href="#visita" data-i18n="footVisit">Plan tu visita</a>
-      </div>
-    </div>
-
-    <div class="small muted" data-i18n="footCopy">
-      © <span id="year"></span> · Hecho con amor y claridad. “A Dios sea la gloria.”
-    </div>
-  </div>
-</footer>
-
-<script>
-  // ---------- Language system (ES/EN) ----------
-  const i18n = {
-    es: {
-      brandName: "Iglesia Bautista Bíblica de Joliet",
-      brandTag: "Servicios en Español e Inglés · Joliet, IL",
-      navVisit: "Plan tu visita",
-      navTimes: "Horarios",
-      navMinistries: "Ministerios",
-      navTestimonies: "Testimonios",
-      navContact: "Contacto",
-      call: "Llamar",
-      ctaNav: "Visítanos",
-
-      heroBadge: "410 E Clay St, Joliet, IL 60432",
-      heroTitle: "Bienvenido. Aquí puedes comenzar de nuevo con Cristo.",
-      heroSub: "Somos una iglesia bautista cristiana (hispana) en Joliet. Ven tal como estás: queremos que te sientas en casa, escuches la Palabra de Dios y encuentres comunidad.",
-      heroBtn1: "Ver horarios",
-      heroBtn2: "Cómo llegar",
-      heroBtn3: "Ver en vivo (Facebook)",
-
-      quickKicker: "Información rápida",
-      quickTitle: "Todo lo esencial, en 20 segundos.",
-      quickSub: "Dirección, horarios principales, cuidado de niños y cómo vernos si estás lejos.",
-      q1t: "Dirección",
-      q2t: "Domingo",
-      q2s: "11:00 AM Escuela Dominical · 12:15 PM Culto · 5:00 PM Estudio Bíblico",
-      q3t: "Jueves",
-      q3s: "7:00 PM Culto de oración",
-      q4t: "Niños",
-      q4s: "Cuidado y enseñanza bíblica (menores de 12)",
-      q5t: "Pastor",
-      q5s: "Pr. Ubaldo Rangel (habla inglés también)",
-      planVisit: "Plan tu visita",
-      msgUs: "Escríbenos",
-      quickNote: "Si es tu primera vez, no te preocupes: te guiamos paso a paso.",
-
-      visitTitle: "Plan tu visita (sin pena)",
-      visitP1: "Queremos que tu primera visita sea fácil. Llega con calma: habrá alguien para recibirte.",
-      visitWhatT: "¿Qué esperar?",
-      visitWhatS: "Predicación bíblica, oración, himnos y un ambiente respetuoso y familiar.",
-      visitWearT: "¿Qué me pongo?",
-      visitWearS: "Como te sientas cómodo. Algunos van formales, otros casual: lo importante es venir.",
-      visitKidsT: "¿Y mis niños?",
-      visitKidsS: "Tenemos cuidado y enseñanza para menores de 12 años durante el domingo.",
-      visitLangT: "Español / English",
-      visitLangS: "Podemos apoyar a visitantes de inglés. El pastor también habla inglés.",
-      visitDir: "Abrir en Maps",
-      visitCall: "Llamar y preguntar",
-
-      whyTitle: "¿Por qué venir?",
-      whyP: "Mucha gente está cansada, con culpa o sin dirección. Aquí no vendemos “religión bonita”: presentamos a Cristo y Su Palabra. Si quieres escuchar un mensaje claro y tener comunidad, este lugar es para ti.",
-      whyL1: "Enseñanza bíblica con propósito (no show).",
-      whyL2: "Una iglesia donde se ora, se aprende y se crece.",
-      whyL3: "Familias, jóvenes, niños… todos son bienvenidos.",
-      whyL4: "Si estás lejos, puedes ver los en vivos por Facebook.",
-      whyNote: "Nuestra meta: que conozcas a Cristo y avances en tu fe.",
-
-      timesTitle: "Horarios",
-      timesP: "Nuestros servicios regulares (si no hay eventos especiales).",
-      sunT: "Domingo",
-      sunS: "11:00 AM Escuela Dominical",
-      sunS2: "12:15 PM Culto (mensaje)",
-      sunS3: "5:00 PM Estudio bíblico (1 hora)",
-      thuT: "Jueves",
-      thuS: "7:00 PM Culto de oración",
-      thuS2: "Oramos como iglesia por necesidades y damos un mensaje breve.",
-      satT: "Sábado",
-      satS: "10:30 AM Devocional",
-      satS2: "11:00 AM Ganancia de almas (visitas / evangelismo)",
-      liveT: "Transmisiones",
-      liveS: "En vivos por Facebook (cuando se transmite)",
-      liveBtn: "Abrir Facebook",
-
-      mapTitle: "Ubicación",
-      mapP: "Estamos en Joliet, Illinois. Puedes abrir Maps con un toque.",
-      dirBtn: "Cómo llegar",
-      openMaps: "Abrir ubicación",
-      mapNote: "Si quieres, te ayudamos por mensaje para que llegues sin batallar.",
-
-      minTitle: "Ministerios",
-      minP: "No es solo “asistir”: es crecer, servir y caminar juntos. Aquí algunos puntos clave.",
-      minKidsT: "Niños (menores de 12)",
-      minKidsS: "Cuidado + enseñanza cristiana, versículos, actividades y dibujos.",
-      minEDT: "Escuela Dominical",
-      minEDS: "Estudio bíblico para aprender, preguntar y fortalecer la fe.",
-      minPrT: "Oración",
-      minPrS: "Jueves: unimos la iglesia en oración por necesidades reales.",
-      minSoulT: "Ganancia de almas",
-      minSoulS: "Sábados: devocional y salimos a visitar y compartir el evangelio.",
-      minNote: "Si quieres integrarte o servir, escríbenos y te orientamos.",
-
-      gal1: "Nuestro templo",
-      gal2: "Familia en Cristo",
-      gal3: "Horarios",
-      gal4: "Alabanza e himnos",
-      galNote: "Nota: si aún no subes fotos a /assets, estas cajas se verán vacías. En el siguiente paso te digo cómo subirlas rápido.",
-
-      testTitle: "Testimonios",
-      testP: "Los testimonios son poderosos porque muestran lo que Dios hace en vidas reales. (Aquí dejé ejemplos. Luego los cambiamos por testimonios reales.)",
-      t1: "“Llegué cargado y sin paz. Dios me habló con Su Palabra y empecé a caminar diferente.”",
-      t1a: "— Visitante",
-      t2: "“Mis hijos están aprendiendo versículos y verdad bíblica. Eso no tiene precio.”",
-      t2a: "— Familia",
-      t3: "“No es un lugar de apariencias. Es una iglesia donde se predica claro y se ora de verdad.”",
-      t3a: "— Hermano/a",
-      shareTest: "Quiero compartir mi testimonio",
-      msgFB: "Mensaje por Facebook",
-      testNote: "Consejo: para que esto aumente visitas, pon 3–6 testimonios reales y una foto/primera letra del nombre (con permiso).",
-
-      contactTitle: "Contacto",
-      contactP: "¿Tienes preguntas? Aquí lo más rápido para comunicarte.",
-      contactPhoneT: "Teléfono",
-      contactPhoneS: "Puedes llamar o dejar mensaje.",
-      contactAddrT: "Dirección",
-      contactAddrS: "Abrir en Maps",
-      contactFBT: "Facebook",
-      contactFBS: "Ir al perfil",
-      contactFBNote: "Ahí publicamos y transmitimos cuando hay en vivo.",
-      pastorT: "Pastor",
-      pastorS: "Pr. Ubaldo Rangel",
-      pastorNote: "Si necesitas orientación, con gusto te atendemos.",
-      growthNote: "Para crecer visitas: dirección visible, horarios claros, botón “Cómo llegar”, y “Ver en vivo”. Eso convierte.",
-
-      nextStepsT: "Siguientes pasos (para que esto realmente traiga gente)",
-      nextStepsP: "Esta página ya está diseñada para convertir visitas. Pero lo que más sube asistencia es el “ecosistema”: Google + Facebook + constancia.",
-      ns1: "Crear o reclamar “Google Business Profile” para que aparezcan en Google Maps con horarios y reseñas.",
-      ns2: "Poner este link en la bio de Facebook, y fijarlo (pinned post) con “Cómo llegar” + horarios.",
-      ns3: "Subir 6–10 fotos reales (templo, familia, niños, predicación, grupo).",
-      ns4: "Agregar 3 testimonios reales (con permiso) y 1 invitación clara cada semana.",
-      nsNote: "Cuando terminemos GitHub Pages, el siguiente “boost” fuerte es Google Business + reseñas reales.",
-
-      footName: "Iglesia Bautista Bíblica de Joliet",
-      footFB: "Facebook",
-      footTimes: "Horarios",
-      footVisit: "Plan tu visita",
-      footCopy: "© <span id='year'></span> · Hecho con amor y claridad. “A Dios sea la gloria.”"
-    },
-
-    en: {
-      brandName: "Bible Baptist Church of Joliet",
-      brandTag: "Services in Spanish & English · Joliet, IL",
-      navVisit: "Plan your visit",
-      navTimes: "Service times",
-      navMinistries: "Ministries",
-      navTestimonies: "Testimonies",
-      navContact: "Contact",
-      call: "Call",
-      ctaNav: "Visit us",
-
-      heroBadge: "410 E Clay St, Joliet, IL 60432",
-      heroTitle: "Welcome. You can start again with Christ.",
-      heroSub: "We are a Bible-preaching Baptist church in Joliet. Come as you are—our desire is that you feel at home, hear God’s Word, and find community.",
-      heroBtn1: "See service times",
-      heroBtn2: "Get directions",
-      heroBtn3: "Watch live (Facebook)",
-
-      quickKicker: "Quick info",
-      quickTitle: "The essentials in 20 seconds.",
-      quickSub: "Address, main times, kids care, and how to watch if you’re far away.",
-      q1t: "Address",
-      q2t: "Sunday",
-      q2s: "11:00 AM Sunday School · 12:15 PM Main Service · 5:00 PM Bible Study",
-      q3t: "Thursday",
-      q3s: "7:00 PM Prayer Service",
-      q4t: "Kids",
-      q4s: "Care & Bible teaching (under 12)",
-      q5t: "Pastor",
-      q5s: "Pr. Ubaldo Rangel (also speaks English)",
-      planVisit: "Plan your visit",
-      msgUs: "Message us",
-      quickNote: "If it’s your first time, don’t worry—we’ll guide you.",
-
-      visitTitle: "Plan your visit (no pressure)",
-      visitP1: "We want your first visit to be easy. Arrive with peace—someone will welcome you.",
-      visitWhatT: "What to expect",
-      visitWhatS: "Bible preaching, prayer, hymns, and a respectful, family-friendly environment.",
-      visitWearT: "What should I wear?",
-      visitWearS: "Whatever you’re comfortable with. Some dress formal, others casual—the important thing is to come.",
-      visitKidsT: "What about my kids?",
-      visitKidsS: "We provide care and Bible teaching for children under 12 on Sundays.",
-      visitLangT: "Spanish / English",
-      visitLangS: "We can support English visitors. The pastor also speaks English.",
-      visitDir: "Open in Maps",
-      visitCall: "Call and ask",
-
-      whyTitle: "Why visit?",
-      whyP: "Many people are tired, carrying guilt, or lacking direction. We don’t sell “nice religion”—we present Christ and His Word. If you want a clear message and real community, you’re welcome here.",
-      whyL1: "Purposeful Bible teaching (no show).",
-      whyL2: "A church that prays, learns, and grows.",
-      whyL3: "Families, youth, kids—everyone is welcome.",
-      whyL4: "If you’re far away, you can watch on Facebook live.",
-      whyNote: "Our goal: that you know Christ and grow in faith.",
-
-      timesTitle: "Service times",
-      timesP: "Our regular schedule (when there are no special events).",
-      sunT: "Sunday",
-      sunS: "11:00 AM Sunday School",
-      sunS2: "12:15 PM Main Service (sermon)",
-      sunS3: "5:00 PM Bible Study (1 hour)",
-      thuT: "Thursday",
-      thuS: "7:00 PM Prayer Service",
-      thuS2: "We pray together for real needs and share a short message.",
-      satT: "Saturday",
-      satS: "10:30 AM Devotional",
-      satS2: "11:00 AM Outreach / Evangelism visits",
-      liveT: "Live stream",
-      liveS: "Facebook Live (when streaming)",
-      liveBtn: "Open Facebook",
-
-      mapTitle: "Location",
-      mapP: "We are in Joliet, Illinois. Open Maps with one tap.",
-      dirBtn: "Get directions",
-      openMaps: "Open location",
-      mapNote: "If you want, message us and we’ll help you get here easily.",
-
-      minTitle: "Ministries",
-      minP: "It’s not only “attending”—it’s growing, serving, and walking together. Key areas:",
-      minKidsT: "Kids (under 12)",
-      minKidsS: "Care + Christian teaching, Bible verses, activities and crafts.",
-      minEDT: "Sunday School",
-      minEDS: "Bible study to learn, ask questions, and strengthen your faith.",
-      minPrT: "Prayer",
-      minPrS: "Thursday: we unite as a church to pray for real needs.",
-      minSoulT: "Outreach",
-      minSoulS: "Saturdays: devotional and we go out to share the Gospel.",
-      minNote: "If you want to get involved or serve, message us and we’ll guide you.",
-
-      gal1: "Our sanctuary",
-      gal2: "Church family",
-      gal3: "Schedule",
-      gal4: "Hymns & worship",
-      galNote: "Note: if you haven’t uploaded photos to /assets yet, these boxes may be empty. Next step: I’ll show you how to upload fast.",
-
-      testTitle: "Testimonies",
-      testP: "Testimonies matter because they show what God does in real lives. (These are examples—later we’ll replace them with real testimonies.)",
-      t1: "“I came burdened and without peace. God spoke to me through His Word, and my life began to change.”",
-      t1a: "— Visitor",
-      t2: "“My kids are learning Bible verses and truth. That’s priceless.”",
-      t2a: "— Family",
-      t3: "“Not a place for appearances—this is a church with clear preaching and real prayer.”",
-      t3a: "— Member",
-      shareTest: "I want to share my testimony",
-      msgFB: "Message on Facebook",
-      testNote: "Tip: to increase visits, add 3–6 real testimonies and a first name/initial (with permission).",
-
-      contactTitle: "Contact",
-      contactP: "Questions? Here are the fastest ways to reach us.",
-      contactPhoneT: "Phone",
-      contactPhoneS: "You can call or leave a message.",
-      contactAddrT: "Address",
-      contactAddrS: "Open in Maps",
-      contactFBT: "Facebook",
-      contactFBS: "Go to profile",
-      contactFBNote: "We post and stream there when live.",
-      pastorT: "Pastor",
-      pastorS: "Pr. Ubaldo Rangel",
-      pastorNote: "If you need guidance, we’re glad to help.",
-      growthNote: "To grow visits: visible address, clear schedule, a “Get directions” button, and “Watch live.” That converts.",
-
-      nextStepsT: "Next steps (to actually bring people in)",
-      nextStepsP: "This page is already designed to convert visitors. But attendance grows most with the ecosystem: Google + Facebook + consistency.",
-      ns1: "Create/claim a Google Business Profile so you appear in Google Maps with hours and reviews.",
-      ns2: "Put this link in your Facebook bio, and pin a post with directions + schedule.",
-      ns3: "Upload 6–10 real photos (sanctuary, church family, kids, preaching).",
-      ns4: "Add 3 real testimonies (with permission) and one clear weekly invitation.",
-      nsNote: "After GitHub Pages, the strongest boost is Google Business + real reviews.",
-
-      footName: "Bible Baptist Church of Joliet",
-      footFB: "Facebook",
-      footTimes: "Service times",
-      footVisit: "Plan your visit",
-      footCopy: "© <span id='year'></span> · Built with clarity and care. “To God be the glory.”"
+        `;
+        grid.appendChild(card);
+      });
     }
-  };
 
-  const els = () => document.querySelectorAll("[data-i18n]");
-  const btnES = document.getElementById("btnES");
-  const btnEN = document.getElementById("btnEN");
-  const yearEl = document.getElementById("year");
-  yearEl.textContent = new Date().getFullYear();
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll("&","&amp;")
+        .replaceAll("<","&lt;")
+        .replaceAll(">","&gt;")
+        .replaceAll('"',"&quot;")
+        .replaceAll("'","&#039;");
+    }
 
-  function setPressed(lang){
-    btnES.setAttribute("aria-pressed", lang === "es" ? "true" : "false");
-    btnEN.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
-    document.documentElement.lang = lang;
-  }
+    // Form -> abre correo
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const msg = document.getElementById("msg").value.trim();
 
-  function applyLang(lang){
-    const dict = i18n[lang] || i18n.es;
-    els().forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if(!dict[key]) return;
-      // allow HTML in footer copy (contains year span)
-      if (key === "footCopy") el.innerHTML = dict[key];
-      else el.textContent = dict[key];
+      const subject = encodeURIComponent("Mensaje desde la página (Iglesia Bautista Bíblica de Joliet)");
+      const body = encodeURIComponent(
+        `Nombre: ${name || "-"}\nTeléfono: ${phone || "-"}\n\nMensaje:\n${msg || "-"}\n\nDirección: 410 E Clay St, Joliet, IL 60432`
+      );
+
+      const mail = LINKS.emailTo.startsWith("mailto:")
+        ? `${LINKS.emailTo}?subject=${subject}&body=${body}`
+        : `mailto:${LINKS.emailTo}?subject=${subject}&body=${body}`;
+
+      window.location.href = mail;
     });
-    setPressed(lang);
-    localStorage.setItem("lang", lang);
-  }
 
-  // detect preferred
-  const saved = localStorage.getItem("lang");
-  const browser = (navigator.language || "es").toLowerCase().startsWith("en") ? "en" : "es";
-  applyLang(saved || browser);
+    // ====== Idiomas ======
+    const dict = {
+      es: {
+        site_name: "Iglesia Bautista Bíblica de Joliet",
+        site_tag: "Servicios en Español e Inglés · Joliet, IL",
+        nav_visit: "Plan tu visita",
+        nav_hours: "Horarios",
+        nav_ministries: "Ministerios",
+        nav_testimonials: "Testimonios",
+        nav_contact: "Contacto",
+        call: "Llamar",
+        visit_us: "Visítanos",
 
-  btnES.addEventListener("click", () => applyLang("es"));
-  btnEN.addEventListener("click", () => applyLang("en"));
+        kicker: "✨ Ven tal como estás · Enfocados en Cristo",
+        hero_title: "Comenzar de nuevo con Cristo.",
+        hero_sub: "Somos una iglesia bautista cristiana en Joliet. Queremos que te sientas en casa, escuches la Palabra de Dios y encuentres comunidad.",
+        see_hours: "Ver horarios",
+        get_directions: "Cómo llegar",
+        watch_live: "Ver en vivo (Facebook)",
+        hero_small: "Dirección visible + horarios claros + botón “Ver en vivo” = más visitas.",
 
-  // ---------- subtle reveal on scroll ----------
-  const revealEls = document.querySelectorAll(".reveal");
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add("on");
-    });
-  }, { threshold: 0.12 });
-  revealEls.forEach(el => io.observe(el));
-</script>
+        address_title: "Dirección",
+        hours_title: "Horarios",
+        hours_short: "Domingo: 11:00am · Jueves: 7:00pm",
+        kids_title: "Niños",
+        kids_desc: "Contamos con cuidado y enseñanza para niños.",
+        pastor_title: "Pastor",
+        pastor_name: "Pr. Ubaldo Rangel",
+
+        visit_title: "Plan tu visita",
+        visit_sub: "Si es tu primera vez, aquí va lo esencial (simple y claro).",
+        msg_fb: "Mensaje por Facebook",
+        first_time: "Primera vez",
+        what_to_expect: "¿Qué esperar?",
+        step1_t: "Llegas y te recibimos",
+        step1_d: "Alguien te saluda, te ayuda a ubicarte y responde tus preguntas.",
+        step2_t: "Alabanza y predicación bíblica",
+        step2_d: "Enfocados en Cristo y en la Palabra de Dios (Biblia).",
+        step3_t: "Convivencia",
+        step3_d: "Queremos que conectes con gente real y una comunidad sana.",
+        help_title: "¿Necesitas ayuda para venir?",
+        help_sub: "Haz clic y listo: ruta en Google Maps, llamada rápida o mensaje.",
+        directions: "📍 Cómo llegar",
+        call_now: "📞 Llamar ahora",
+        see_testimonials: "⭐ Ver testimonios",
+        today_title: "Hoy",
+        today_text: "Si hoy tienes la oportunidad, ven y siéntete en casa.",
+
+        hours_section_title: "Horarios",
+        hours_section_sub: "Lo más importante: cuándo y a qué hora.",
+        sun_title: "Domingo",
+        sun_times: "11:00am · Escuela dominical",
+        sun_times2: "12:30pm · Culto",
+        thu_title: "Jueves",
+        thu_times: "7:00pm · Servicio",
+        lang_title: "Idiomas",
+        lang_text: "Español e Inglés. El pastor habla inglés y podemos ayudar con traducción.",
+
+        min_title: "Ministerios",
+        min_sub: "Un lugar para crecer, servir y encontrar comunidad.",
+        min1_title: "Familias",
+        min1_desc: "Enseñanza bíblica y apoyo para la familia.",
+        min2_title: "Niños",
+        min2_desc: "Cuidado y enseñanza para niños durante los servicios.",
+        min3_title: "Alabanza",
+        min3_desc: "Himnos y música para exaltar a Cristo.",
+
+        test_title: "Testimonios",
+        test_sub: "Historias reales. (Agrega los tuyos cuando quieras.)",
+        share_testimony: "Quiero compartir mi testimonio",
+
+        contact_title: "Contacto",
+        contact_sub: "¿Tienes preguntas? Escríbenos y te orientamos.",
+        contact_form_title: "Envíanos un mensaje",
+        form_name: "Nombre",
+        form_phone: "Teléfono (opcional)",
+        form_msg: "Mensaje",
+        send_email: "Enviar por email",
+        call_now2: "Llamar",
+        directions2: "Cómo llegar",
+        email_note: "Este formulario abre tu app de correo (no guarda datos en servidor).",
+
+        contact_info_title: "Información",
+        addr: "Dirección",
+        phone: "Teléfono",
+        service_hours: "Servicios",
+        service_hours_text: "Domingo 11:00am & 12:30pm · Jueves 7:00pm",
+        live_title: "En vivo",
+        live_text: "Si no puedes venir hoy, míranos en Facebook.",
+        watch_live2: "Ver en vivo",
+        footer_note: "Hecho con amor y claridad."
+      },
+
+      en: {
+        site_name: "Iglesia Bautista Bíblica de Joliet",
+        site_tag: "Services in Spanish & English · Joliet, IL",
+        nav_visit: "Plan your visit",
+        nav_hours: "Service times",
+        nav_ministries: "Ministries",
+        nav_testimonials: "Testimonials",
+        nav_contact: "Contact",
+        call: "Call",
+        visit_us: "Visit us",
+
+        kicker: "✨ Come as you are · Focused on Christ",
+        hero_title: "Start fresh with Christ.",
+        hero_sub: "We’re a Baptist Christian church in Joliet. We want you to feel at home, hear God’s Word, and find community.",
+        see_hours: "See times",
+        get_directions: "Get directions",
+        watch_live: "Watch live (Facebook)",
+        hero_small: "Clear address + clear times + “Watch live” button = more visits.",
+
+        address_title: "Address",
+        hours_title: "Times",
+        hours_short: "Sunday: 11:00am · Thursday: 7:00pm",
+        kids_title: "Kids",
+        kids_desc: "Kids care and teaching available.",
+        pastor_title: "Pastor",
+        pastor_name: "Pastor Ubaldo Rangel",
+
+        visit_title: "Plan your visit",
+        visit_sub: "If it’s your first time, here’s the simple overview.",
+        msg_fb: "Message on Facebook",
+        first_time: "First time",
+        what_to_expect: "What to expect",
+        step1_t: "Arrive & get welcomed",
+        step1_d: "Someone greets you, helps you find your place, and answers questions.",
+        step2_t: "Worship & Bible preaching",
+        step2_d: "Centered on Christ and God’s Word (the Bible).",
+        step3_t: "Community time",
+        step3_d: "We want you to connect with real people and a healthy community.",
+        help_title: "Need help getting here?",
+        help_sub: "One click: Google Maps, a quick call, or a message.",
+        directions: "📍 Get directions",
+        call_now: "📞 Call now",
+        see_testimonials: "⭐ See testimonials",
+        today_title: "Today",
+        today_text: "If you can, come today and feel at home.",
+
+        hours_section_title: "Service times",
+        hours_section_sub: "The essentials: day and time.",
+        sun_title: "Sunday",
+        sun_times: "11:00am · Sunday School",
+        sun_times2: "12:30pm · Worship Service",
+        thu_title: "Thursday",
+        thu_times: "7:00pm · Service",
+        lang_title: "Languages",
+        lang_text: "Spanish & English. The pastor speaks English and we can help translate.",
+
+        min_title: "Ministries",
+        min_sub: "A place to grow, serve, and find community.",
+        min1_title: "Families",
+        min1_desc: "Bible teaching and support for families.",
+        min2_title: "Kids",
+        min2_desc: "Kids care and teaching during services.",
+        min3_title: "Worship",
+        min3_desc: "Hymns and music to exalt Christ.",
+
+        test_title: "Testimonials",
+        test_sub: "Real stories. (Add yours anytime.)",
+        share_testimony: "I want to share my testimony",
+
+        contact_title: "Contact",
+        contact_sub: "Have questions? Message us and we’ll help you.",
+        contact_form_title: "Send us a message",
+        form_name: "Name",
+        form_phone: "Phone (optional)",
+        form_msg: "Message",
+        send_email: "Send by email",
+        call_now2: "Call",
+        directions2: "Get directions",
+        email_note: "This opens your email app (no server storage).",
+
+        contact_info_title: "Info",
+        addr: "Address",
+        phone: "Phone",
+        service_hours: "Services",
+        service_hours_text: "Sunday 11:00am & 12:30pm · Thursday 7:00pm",
+        live_title: "Live",
+        live_text: "If you can’t come, watch on Facebook.",
+        watch_live2: "Watch live",
+        footer_note: "Made with love and clarity."
+      }
+    };
+
+    function setLang(lang){
+      const es = lang !== "en" ? "es" : "en";
+      localStorage.setItem("lang", es);
+      document.documentElement.lang = es;
+
+      document.getElementById("btnES").setAttribute("aria-pressed", es === "es" ? "true" : "false");
+      document.getElementById("btnEN").setAttribute("aria-pressed", es === "en" ? "true" : "false");
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if(dict[es] && dict[es][key]) el.textContent = dict[es][key];
+      });
+
+      renderTestimonials(es);
+    }
+
+    document.getElementById("btnES").addEventListener("click", () => setLang("es"));
+    document.getElementById("btnEN").addEventListener("click", () => setLang("en"));
+
+    setLang(localStorage.getItem("lang") || "es");
+  </script>
 </body>
 </html>
